@@ -17,7 +17,7 @@ env:
   SSH_ACTIONS: false
   CONFIG_FILE: configs/ipq60xx-wifi(emmc).config
   PATCHES_FILE_1: patches/0001-show-soc-status-on-luci.patch
-  DIY_SCRIPT: diy-script.sh
+  DIY_SCRIPT: diy-mini.sh
   CLASH_KERNEL: amd64
   CACHE_TOOLCHAIN: true
   UPLOAD_BIN_DIR: false
