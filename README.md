@@ -1,8 +1,13 @@
 <div align="center">
 <img width="768" src="https://github.com/breeze303/ipq60xx-6.1/blob/main/include/logo.png"/>
 <h1>OpenWrt — 云编译</h1>
-
-
+ 
+##  notes
+- 亚瑟的出厂默认rootfs空间是60M
+- USB3.0正常，移动硬盘拷贝跑满千兆LAN。
+- 5GHz WIFI不正常，电脑显示连接速度1200mbps，实际拷贝吞吐只有200多。经人提醒手动指定发射功率到20db之后，可以到700mbps的吞吐。驱动默认不填的时候是27db，反而有问题
+- https://post.smzdm.com/p/a7p2ddel/  
+ 
 ## 项目说明 [![](https://img.shields.io/badge/-项目基本介绍-FFFFFF.svg)](#项目说明-)
 - 固件默认管理地址：`192.168.1.1` 默认用户：`root` 默认密码：`password`
 - 源码来源：https://github.com/breeze303/openwrt-6.x.git 感谢breeze303
@@ -14,11 +19,11 @@
 点击下表中 [![](https://img.shields.io/badge/下载-链接-blueviolet.svg?style=flat&logo=hack-the-box)](https://github.com/haiibo/OpenWrt/releases) 即可跳转到该设备固件下载页面
 | 平台+设备名称 | 固件编译状态 | 配置文件 | 固件下载 |
 | :-------------: | :-------------: | :-------------: | :-------------: |
-| [![](https://img.shields.io/badge/IPQ60XX-NOWIF-32C955.svg?logo=openwrt)](https://github.com/breeze303/OpenWrt/blob/main/.github/workflows/IPQ60XX.yml) | [![](https://github.com/breeze303/OpenWrt/actions/workflows/IPQ60XX.yml/badge.svg)](https://github.com/breeze303/OpenWrt/actions/workflows/IPQ60XX-6.6.yml) | [![](https://img.shields.io/badge/编译-配置-orange.svg?logo=apache-spark)](https://github.com/breeze303/OpenWrt/blob/main/configs/ipq60xx.config) | [![](https://img.shields.io/badge/下载-链接-blueviolet.svg?logo=hack-the-box)](https://github.com/breeze303/OpenWrt/releases/IPQ60XX) |
-| [![](https://img.shields.io/badge/IPQ60XX-WIFI-32C955.svg?logo=openwrt)](https://github.com/breeze303/OpenWrt/blob/main/.github/workflows/IPQ60XX-WIFI.yml) | [![](https://github.com/breeze303/OpenWrt/actions/workflows/IPQ60XX-WIFI.yml/badge.svg)](https://github.com/breeze303/OpenWrt/actions/workflows/IPQ60XX-WIFI.yml) | [![](https://img.shields.io/badge/编译-配置-orange.svg?logo=apache-spark)](https://github.com/breeze303/OpenWrt/blob/main/configs/ipq60xx-wifi.config) | [![](https://img.shields.io/badge/下载-链接-blueviolet.svg?logo=hack-the-box)](https://github.com/breeze303/OpenWrt/releases/IPQ60XX-WIFI) |
-| [![](https://img.shields.io/badge/IPQ60XX-WIFI(EMNC)-32C955.svg?logo=openwrt)](https://github.com/breeze303/OpenWrt/blob/main/.github/workflows/IPQ60XX-WIFI(EMMC).yml) | [![](https://github.com/breeze303/OpenWrt/actions/workflows/IPQ60XX-WIFI(EMMC).yml/badge.svg)](https://github.com/breeze303/OpenWrt/actions/workflows/IPQ60XX-WIFI(EMMC).yml) | [![](https://img.shields.io/badge/编译-配置-orange.svg?logo=apache-spark)](https://github.com/breeze303/OpenWrt/blob/main/configs/ipq60xx-wifi(emmc).config) | [![](https://img.shields.io/badge/下载-链接-blueviolet.svg?logo=hack-the-box)](https://github.com/breeze303/OpenWrt/releases/IPQ60XX-WIFI(EMMC)) |
-| [![](https://img.shields.io/badge/IPQ807X-WIFI-32C955.svg?logo=openwrt)](https://github.com/breeze303/OpenWrt/blob/main/.github/workflows/IPQ807X-WIFI.yml) | [![](https://github.com/breeze303/OpenWrt/actions/workflows/IPQ807X-WIFI.yml/badge.svg)](https://github.com/breeze303/OpenWrt/actions/workflows/IPQ807X-WIFI.yml) | [![](https://img.shields.io/badge/编译-配置-orange.svg?logo=apache-spark)](https://github.com/breeze303/OpenWrt/blob/main/configs/ipq807x-wifi.config) | [![](https://img.shields.io/badge/下载-链接-blueviolet.svg?logo=hack-the-box)](https://github.com/breeze303/OpenWrt/releases/IPQ807X-WIFI) |
-| [![](https://img.shields.io/badge/X86-64-32C955.svg?logo=openwrt)](https://github.com/breeze303/OpenWrt/blob/main/.github/workflows/X86-64.yml) | [![](https://github.com/breeze303/OpenWrt/actions/workflows/X86-64.yml/badge.svg)](https://github.com/breeze303/OpenWrt/actions/workflows/X86-64.yml) | [![](https://img.shields.io/badge/编译-配置-orange.svg?logo=apache-spark)](https://github.com/breeze303/OpenWrt/blob/main/configs/x86-64.config) | [![](https://img.shields.io/badge/下载-链接-blueviolet.svg?logo=hack-the-box)](https://github.com/breeze303/OpenWrt/releases/X86-64) |
+
+
+| [![](https://img.shields.io/badge/IPQ60XX-WIFI(EMNC)-32C955.svg?logo=openwrt)](https://github.com/breeze303/OpenWrt/blob/main/.github/workflows/IPQ60XX-WIFI(EMMC).yml) | [![](https://github.com/breeze303/OpenWrt/actions/workflows/IPQ60XX-WIFI(EMMC).yml/badge.svg)](https://github.com/breeze303/OpenWrt/actions/workflows/IPQ60XX-WIFI(EMMC).yml) | [![](https://img.shields.io/badge/编译-配置-orange.svg?logo=apache-spark)](https://github.com/breeze303/OpenWrt/blob/main/configs/ipq60xx-wifi(emmc).config) | [![](https://img.shields.io/badge/下载-链接-blueviolet.svg?logo=hack-the-box)](https://github.com/breeze303/OpenWrt/releases/IPQ60XX-WIFI(EMMC)) 
+
+|
 
 
 ## 定制固件 [![](https://img.shields.io/badge/-项目基本编译教程-FFFFFF.svg)](#定制固件-)
