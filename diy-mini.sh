@@ -42,7 +42,9 @@ cp -f $GITHUB_WORKSPACE/scripts/011-fix-mbo-modules-build.patch package/network/
 # 取消主题默认设置
  find package/luci-theme-*/* -type f -name '*luci-theme-*' -print -exec sed -i '/set luci.main.mediaurlbase/d' {} \;
 
-
-
+# 调整 ZeroTier 到 服务 菜单
+# sed -i 's/nas/g; s/services/g' package/xunlei/openwrt/luci-app-xunlei/luasrc/controller/xunlei.lua
+# sed -i 's/nas/g; s/services/g' package/xunlei/openwrt/luci-app-xunlei/luasrc/view/xunlei/xunlei_status.htm
+# sed -i 's/nas/g; s/services/g' package/xunlei/openwrt/luci-app-xunlei/luasrc/view/xunlei/xunlei_log.htm
 ./scripts/feeds update -a
 ./scripts/feeds install -a
