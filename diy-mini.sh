@@ -18,10 +18,9 @@ function git_sparse_clone() {
 # 添加额外插件
 
 # xunlei
-git clone --depth 1 --branch v3.11.2-32 https://github.com/0x676e67/thunder.git package/xunlei
+# git clone --depth 1 --branch v3.11.2-32 https://github.com/0x676e67/thunder.git package/xunlei
 
-# Alist
-#git clone --depth=1 https://github.com/sbwml/luci-app-alist package/luci-app-alist
+
 
 
 
