@@ -22,18 +22,14 @@ function git_sparse_clone() {
 
 
 
-
 # 修改版本为编译日期
 date_version=$(date +"%y.%m.%d")
 orig_version=$(cat "package/emortal/default-settings/files/99-default-settings" | grep DISTRIB_REVISION= | awk -F "'" '{print $2}')
 sed -i "s/${orig_version}/${orig_version}-R${date_version} by Freedy/g" package/emortal/default-settings/files/99-default-settings
 
-# 修复 hostapd 报错
-cp -f $GITHUB_WORKSPACE/scripts/011-fix-mbo-modules-build.patch package/network/services/hostapd/patches/011-fix-mbo-modules-build.patch
 
 
-
-# # 调整 xunlei 到 服务 菜单
+#  调整 xunlei 到 服务 菜单
 #  sed -i 's/nas/services/g' package/xunlei/openwrt/luci-app-xunlei/luasrc/controller/xunlei.lua
 #  sed -i 's/nas/services/g' package/xunlei/openwrt/luci-app-xunlei/luasrc/view/xunlei/xunlei_status.htm
 #  sed -i 's/nas/services/g' package/xunlei/openwrt/luci-app-xunlei/luasrc/view/xunlei/xunlei_log.htm
