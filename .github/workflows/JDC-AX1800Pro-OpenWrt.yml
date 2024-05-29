@@ -8,6 +8,11 @@ on:
         description: 'SSH connection to Actions'
         required: false
         default: 'false'
+      skip_build:
+          description: 'skip_build'
+          required: true
+          default: true
+          type: boolean
   # schedule:
   #   - cron: 0 19 * * *
 
@@ -138,6 +143,7 @@ jobs:
         find dl -size -1024c -exec rm -f {} \;
 
     - name: Compile Firmware(开始编译固件)
+      if: github.event.inputs.skip_build == 'false'
       id: compile
       run: |
         cd $OPENWRT_PATH
