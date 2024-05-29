@@ -14,6 +14,7 @@
 - 源码来源：https://github.com/openwrt-dev/openwrt-ipq60xx 感谢大佬
 - 源码来源: https://github.com/JiaY-shi/openwrt/tree/ipq60xx-devel_nss 感谢大佬
 - 云编译来源：https://github.com/haiibo/OpenWrt 感谢大佬
+- https://github.com/lgs2007m/Actions-OpenWrt/tree/2024.04.05-1829-hanwckf-rax3000m-emmc_xr30-emmc-26MHz-eeprom-mtwifi-docker
 
 ## 固件下载 [![](https://img.shields.io/badge/-编译状态及下载链接-FFFFFF.svg)](#固件下载-)
 点击下表中 [![](https://img.shields.io/badge/下载-链接-blueviolet.svg?style=flat&logo=hack-the-box)](https://github.com/haiibo/OpenWrt/releases) 即可跳转到该设备固件下载页面
