@@ -202,8 +202,8 @@ jobs:
       uses: ncipollo/release-action@v1
       with:        
         name: R${{ env.DATE }} for ${{env.DEVICE_TARGET  }}       
-        tag_name: ${{ steps.tag.outputs.release_tag }}
+        tag: ${{ steps.tag.outputs.release_tag }}
         token: ${{ secrets.GITHUB_TOKEN }}
         artifacts: ${{ env.FIRMWARE_PATH }}/*
-        body_path: release.txt
+        bodyFile: release.txt
        
