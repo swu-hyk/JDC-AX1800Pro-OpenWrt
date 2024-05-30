@@ -175,14 +175,14 @@ jobs:
       if: steps.compile.outputs.status == 'success' && env.FIRMWARE_RELEASE != 'true'
       uses: actions/upload-artifact@main
       with:
-        name: ${{ env.SOURCE_REPO }}-firmware-${{ env.DEVICE_TARGET }}-${{ env.DEVICE_SUBTARGET }}-${{ env.FILE_DATE }}
+        name: ${{ env.SOURCE_REPO }}-firmware-${{ env.DEVICE_SUBTARGET }}-${{ env.FIRMWARE_TAG }}-${{ env.FILE_DATE }}
         path: ${{ env.FIRMWARE_PATH }}
 
     - name: 生成固件Release标签  
       id: tag
       run: |
         touch release.txt
-        echo '**This is OpenWrt Firmware for ${{ env.DEVICE_SUBTARGET }}**' >> release.txt
+        echo '**This is OpenWrt Firmware for ${{ env.FIRMWARE_TAG }}**' >> release.txt
         echo '### 📒 固件信息
         - 这是带WIFI以及NSS且适用于EMMC的固件
         - 💻 这是 ${{ env.FIRMWARE_TAG }} 平台使用的 OpenWrt 固件
@@ -194,14 +194,14 @@ jobs:
         echo '### 🧊 固件版本
         - 固件编译前最后一次➦[主源码](${{ env.REPO_URL }})更新记录
         - ${{ env.VERSION_INFO }}' >> release.txt 
-        echo 'release_tag=${{ env.FILE_DATE }}-${{ env.SOURCE_REPO  }}-${{ env.DEVICE_TARGET }}' >> $GITHUB_OUTPUT
+        echo 'release_tag=${{ env.FILE_DATE }}-${{ env.SOURCE_REPO  }}-${{ env.FIRMWARE_TAG }}' >> $GITHUB_OUTPUT
         echo "status=success" >> $GITHUB_OUTPUT
 
     - name: Upload Firmware To Release(发布固件)
       if: steps.compile.outputs.status == 'success' && env.FIRMWARE_RELEASE == 'true'
       uses: ncipollo/release-action@v1
       with:        
-        name: R${{ env.DATE }} for ${{env.DEVICE_TARGET  }}       
+        name: R${{ env.DATE }} for ${{ env.FIRMWARE_TAG }}       
         tag: ${{ steps.tag.outputs.release_tag }}
         token: ${{ secrets.GITHUB_TOKEN }}
         artifacts: ${{ env.FIRMWARE_PATH }}/*
