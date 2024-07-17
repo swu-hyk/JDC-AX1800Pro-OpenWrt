@@ -106,13 +106,13 @@ jobs:
         ./scripts/feeds update -a
         ./scripts/feeds install -a
 
-    - name: Apply patches(安装补丁)   
-      run: |
-        git config --global user.name "OpenWrt Builder"
-        git config --global user.email "buster-openwrt@ovvo.uk"
-        cp $PATCHES_FILE_1 $OPENWRT_PATH/feeds/luci
-        cd $OPENWRT_PATH/feeds/luci
-        git am 0001-show-soc-status-on-luci.patch
+    # - name: Apply patches(安装补丁)   
+    #   run: |
+    #     git config --global user.name "OpenWrt Builder"
+    #     git config --global user.email "buster-openwrt@ovvo.uk"
+    #     cp $PATCHES_FILE_1 $OPENWRT_PATH/feeds/luci
+    #     cd $OPENWRT_PATH/feeds/luci
+    #     git am 0001-show-soc-status-on-luci.patch
   
     - name: Load Custom Configuration(加载自定义配置)
       run: |
@@ -122,12 +122,12 @@ jobs:
         cd $OPENWRT_PATH
         $GITHUB_WORKSPACE/$DIY_SCRIPT
 
-    - name: SSH链接管理
-      uses: P3TERX/ssh2actions@v1.0.0
-      if: (github.event.inputs.ssh == 'true' && github.event.inputs.ssh  != 'false') || contains(github.event.action, 'ssh')
-      env:
-          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+    # - name: SSH链接管理
+    #   uses: P3TERX/ssh2actions@v1.0.0
+    #   if: (github.event.inputs.ssh == 'true' && github.event.inputs.ssh  != 'false') || contains(github.event.action, 'ssh')
+    #   env:
+    #       TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+    #       TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
 
     - name: Download DL Package(下载DL软件包)
       run: |
