@@ -6,7 +6,8 @@
 - 亚瑟的出厂默认rootfs空间是60M
 - USB3.0正常，移动硬盘拷贝跑满千兆LAN。
 - 5GHz WIFI不正常，电脑显示连接速度1200mbps，实际拷贝吞吐只有200多。经人提醒手动指定发射功率到20db之后，可以到700mbps的吞吐。驱动默认不填的时候是27db，反而有问题
-- https://post.smzdm.com/p/a7p2ddel/  
+- https://post.smzdm.com/p/a7p2ddel/
+- 如果WiFi想跑满千兆的话，发射功率设置23db，信道选149或者157
  
 ## 项目说明 [![](https://img.shields.io/badge/-项目基本介绍-FFFFFF.svg)](#项目说明-)
 - 固件默认管理地址：`192.168.1.1` 默认用户：`root` 默认密码：`password`
