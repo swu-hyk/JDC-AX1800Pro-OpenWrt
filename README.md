@@ -8,14 +8,15 @@
 - 5GHz WIFI不正常，电脑显示连接速度1200mbps，实际拷贝吞吐只有200多。经人提醒手动指定发射功率到20db之后，可以到700mbps的吞吐。驱动默认不填的时候是27db，反而有问题
 - https://post.smzdm.com/p/a7p2ddel/  
 ## app list
-- vpn zerotier
-- samba
-- sftp
-- 上网时间控制
-- kms服务器
-- upnp
-- 定时重启
-- turbo acc
+
+- luci-app-samba4
+- openssh-sftp-server
+- luci-app-zerotier 
+- luci-app-accesscontrol 上网时间控制 
+- luci-app-vlmcsd kms服务器 
+- luci-app-upnp  
+- luci-app-autoreboot 定时重启
+- luci-app-turboacc (todo)
 
  
 ## 项目说明 [![](https://img.shields.io/badge/-项目基本介绍-FFFFFF.svg)](#项目说明-)
