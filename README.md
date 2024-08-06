@@ -8,6 +8,7 @@
 - 5GHz WIFI不正常，电脑显示连接速度1200mbps，实际拷贝吞吐只有200多。经人提醒手动指定发射功率到20db之后，可以到700mbps的吞吐。驱动默认不填的时候是27db，反而有问题
 - https://post.smzdm.com/p/a7p2ddel/
 - 如果WiFi想跑满千兆的话，发射功率设置23db，信道选149或者157
+
  
 ## 项目说明 [![](https://img.shields.io/badge/-项目基本介绍-FFFFFF.svg)](#项目说明-)
 - 固件默认管理地址：`192.168.1.1` 默认用户：`root` 默认密码：`password`
@@ -16,6 +17,17 @@
 - 源码来源: https://github.com/JiaY-shi/openwrt/tree/ipq60xx-devel_nss 感谢大佬
 - 云编译来源：https://github.com/haiibo/OpenWrt 感谢大佬
 - 云编译来源 https://github.com/lgs2007m/Actions-OpenWrt/ 感谢大佬
+
+## app list
+
+- luci-app-samba4
+- openssh-sftp-server
+- luci-app-zerotier 
+- luci-app-accesscontrol 上网时间控制 
+- luci-app-vlmcsd kms服务器 
+- luci-app-upnp  
+- luci-app-autoreboot 定时重启
+- luci-app-wifischedule
 
 
 
@@ -48,8 +60,8 @@
 3. 下载源代码，更新 feeds 并安装到本地
 
    ```bash
-   git clone https://github.com/coolsnowwolf/lede
-   cd lede
+   git clone https://github.com/LiBwrt-op/openwrt-6.x
+   cd openwrt-6.x
    ./scripts/feeds update -a
    ./scripts/feeds install -a
    ```

@@ -15,7 +15,10 @@ env:
   REPO_URL: https://github.com/LiBwrt-op/openwrt-6.x
   REPO_BRANCH: main  
   CONFIG_FILE: configs/JDC-AX1800Pro.config
+  FEEDS_CONF: feeds.conf.default
   # PATCHES_FILE_1: patches/0001-show-soc-status-on-luci.patch
+  DIY_P1_SH: diy-part1.sh
+  DIY_P2_SH: diy-part2.sh
   DIY_SCRIPT: diy-mini.sh
   CLASH_KERNEL: amd64
   CACHE_TOOLCHAIN: true
@@ -98,6 +101,16 @@ jobs:
         ccache: false
         mixkey: ${{ env.SOURCE_REPO }}-${{ env.REPO_BRANCH }}-${{ env.DEVICE_TARGET }}-${{ env.DEVICE_SUBTARGET }}
         prefix: ${{ env.OPENWRT_PATH }}
+
+
+    - name: 加载自定义feeds
+      run: |
+        [ -e $FEEDS_CONF ] && mv $FEEDS_CONF openwrt/feeds.conf.default
+        chmod +x $DIY_P1_SH
+        cd $OPENWRT_PATH
+        $GITHUB_WORKSPACE/$DIY_P1_SH
+        cat $OPENWRT_PATH/feeds.conf.default
+
     
     - name: Install Feeds(安装feeds)
       run: |
