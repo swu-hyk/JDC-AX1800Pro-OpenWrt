@@ -27,7 +27,8 @@
 - luci-app-vlmcsd kms服务器 
 - luci-app-upnp  
 - luci-app-autoreboot 定时重启
-- luci-app-turboacc (todo)
+- luci-app-wifischedule
+
 
 
 ## 定制固件 [![](https://img.shields.io/badge/-项目基本编译教程-FFFFFF.svg)](#定制固件-)
