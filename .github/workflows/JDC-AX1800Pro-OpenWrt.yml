@@ -16,7 +16,7 @@ env:
   REPO_BRANCH: main  
   CONFIG_FILE: configs/JDC-AX1800Pro.config
   FEEDS_CONF: feeds.conf.default
-  # PATCHES_FILE_1: patches/0001-show-soc-status-on-luci.patch
+  PATCHES_FILE_1: patches/0001-show-soc-status-on-luci.patch
   DIY_P1_SH: diy-part1.sh
   DIY_P2_SH: diy-part2.sh
   DIY_SCRIPT: diy-mini.sh
@@ -118,13 +118,13 @@ jobs:
         ./scripts/feeds update -a
         ./scripts/feeds install -a
 
-    # - name: Apply patches(安装补丁)   
-    #   run: |
-    #     git config --global user.name "OpenWrt Builder"
-    #     git config --global user.email "buster-openwrt@ovvo.uk"
-    #     cp $PATCHES_FILE_1 $OPENWRT_PATH/feeds/luci
-    #     cd $OPENWRT_PATH/feeds/luci
-    #     git am 0001-show-soc-status-on-luci.patch
+    - name: Apply patches(安装补丁)   
+      run: |
+        git config --global user.name "OpenWrt Builder"
+        git config --global user.email "buster-openwrt@ovvo.uk"
+        cp $PATCHES_FILE_1 $OPENWRT_PATH/feeds/luci
+        cd $OPENWRT_PATH/feeds/luci
+        git am 0001-show-soc-status-on-luci.patch
   
     - name: Load Custom Configuration(加载自定义配置)
       run: |
